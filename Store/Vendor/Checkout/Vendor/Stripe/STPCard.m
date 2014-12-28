@@ -309,14 +309,14 @@
 {
     // Order matters here
     NSString *numberRef = [self number];
-    NSString *expMonthRef = [NSString stringWithFormat:@"%u", [self expMonth]];
-    NSString *expYearRef = [NSString stringWithFormat:@"%u", [self expYear]];
+  //  NSString *expMonthRef = [NSString stringWithFormat:@"%u", [self expMonth]];
+  //  NSString *expYearRef = [NSString stringWithFormat:@"%u", [self expYear]];
     NSString *cvcRef = [self cvc];
 
     // Make sure expMonth, expYear, and number are set.  Validate CVC if it is provided
     return [self validateNumber:&numberRef error:outError] &&
-           [self validateExpYear:&expYearRef error:outError] &&
-           [self validateExpMonth:&expMonthRef error:outError] &&
+//           [self validateExpYear:&expYearRef error:outError] &&
+  //         [self validateExpMonth:&expMonthRef error:outError] &&
             (cvcRef == NULL || [self validateCvc:&cvcRef error:outError]);
 }
 @end
